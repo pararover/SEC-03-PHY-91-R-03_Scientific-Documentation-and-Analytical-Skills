@@ -1,2 +1,48 @@
-\section{Insert title}
-    Insert content.
+\section{Importing data from diverse file formats}
+    
+    Suppose a physics experiment records a variable which is of interest to us, such as temperature, pressure, voltage, count rate etc. These variables are recorded (or sampled) at a sequence of time instants. Now this raw record of data produced by an instrument is almost certainly unfit for direct analysis because
+    \begin{enumerate}[a)]
+    	\item It may contain unreliable readings.
+    	\item It may be out of chronological order.
+    	\item It may mix standard and non-standard units.
+    	\item It may contain gaps.
+    \end{enumerate}
+    Then we say that such a dataset must be \textit{pre-processed} before it can be visualised or fitted to a theoretical curve.
+    
+    For the purpose of pre-processing, the dataset must be first stored and archived in the form of a file. Three file formats are widely physics laboratory exports:
+    \begin{enumerate}
+    	\item Comma-separated values (CSV files)
+    	\item Whitespace-delimited plain text (ASCII files)
+    	\item Instrument-specific data (DAT files)
+    \end{enumerate}
+    
+    \subsection{CSV files}
+    	A comma-separated values (CSV) file is a plain text data format for storing tabular data where the fields (values) of a record are separated by a comma and each record is a line (i.e. newline separated). For example, the following are the contents of a CSV file:
+    	\begin{Verbatim}[frame=single, numbers=left]
+    id, name, email
+    1, John, john.doe@example.com
+    2, Jane, janey72@test.org
+    	\end{Verbatim}
+    	
+    	In software that generally deals with tabular data such as a database or a spreadsheet, the contents of the above CSV file is parsed in the form of a table as follows:
+    	\begin{table}[h!]
+    		\centering
+    		\begin{tabular}{|c|c|c|}
+    			\hline
+    			\textbf{id} & \textbf{name} & \textbf{email} \\ \hline
+    			{1} & {John} & {john.doe@example.com} \\ \hline
+    			{2} & {Jane} & {janey72@test.org} \\ \hline
+    		\end{tabular}
+    	\end{table}
+    	
+    	The first line is used as the table header and the remaining lines are used as the rows of the table.
+    	%In CSV files, the data are delimited using commas and usually carry a single header row. Their apparent simplicity is precisely what makes an inconsistent missing-value marker easy to overlook unless the import step is explicitly configured to recognise it.
+    	
+    	\subsubsection{Steps to create a CSV file in Windows}
+    		\begin{enumerate}[I.]
+    			\item 
+    		\end{enumerate}
+    
+    \subsection{ASCII files}
+    
+    \subsection{DAT files}
