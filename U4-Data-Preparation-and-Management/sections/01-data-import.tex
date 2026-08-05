@@ -12,37 +12,41 @@
     For the purpose of pre-processing, the dataset must be first stored and archived in the form of a file. Three file formats are widely physics laboratory exports:
     \begin{enumerate}
     	\item Comma-separated values (CSV files)
-    	\item Whitespace-delimited plain text (ASCII files)
     	\item Instrument-specific data (DAT files)
+    	\item Microsoft Excel spreadsheets (XLSX files)
     \end{enumerate}
     
-    \subsection{CSV files}
-    	A comma-separated values (CSV) file is a plain text data format for storing tabular data where the fields (values) of a record are separated by a comma and each record is a line (i.e. newline separated). For example, the following are the contents of a CSV file:
-    	\begin{Verbatim}[frame=single, numbers=left]
-    id, name, email
-    1, John, john.doe@example.com
-    2, Jane, janey72@test.org
-    	\end{Verbatim}
-    	
-    	In software that generally deals with tabular data such as a database or a spreadsheet, the contents of the above CSV file is parsed in the form of a table as follows:
-    	\begin{table}[h!]
-    		\centering
-    		\begin{tabular}{|c|c|c|}
-    			\hline
-    			\textbf{id} & \textbf{name} & \textbf{email} \\ \hline
-    			{1} & {John} & {john.doe@example.com} \\ \hline
-    			{2} & {Jane} & {janey72@test.org} \\ \hline
-    		\end{tabular}
-    	\end{table}
-    	
-    	The first line is used as the table header and the remaining lines are used as the rows of the table.
-    	%In CSV files, the data are delimited using commas and usually carry a single header row. Their apparent simplicity is precisely what makes an inconsistent missing-value marker easy to overlook unless the import step is explicitly configured to recognise it.
-    	
-    	\subsubsection{Steps to create a CSV file in Windows}
-    		\begin{enumerate}[I.]
-    			\item 
-    		\end{enumerate}
-    
     \subsection{ASCII files}
+    	ASCII, which is an acronym for \textit{American Standard Code for Information Interchange}, is a character encoding standard. Originally, it was used for representing a particular set of 95 printable characters and 33 control characters, thereby giving a total of 128 code points, using 7 bits. Later, an 8-bit encoding extended the ASCII set to a total of 256 characters.
+    	
+    	An ASCII file is one that contains data made up of ASCII characters, i.e. it is essentially raw text. Each byte in the file contains one character that conforms to the standard ASCII code.
+    	
+    	Source codes of computer programs, batch files, macros and scripts are straight text and stored as ASCII files. HTML and XML files are also ASCII files. Text editors such as Notepad create ASCII files as their native file format.
+    	
+    	CSV and DAT files are two of the most commonly used ASCII file formats used for storing scientific data for subsequent analysis.
+    	
+    	\subsubsection{CSV files}
+	    	A comma-separated values (CSV) file is a plain text data format for storing tabular data where the fields (values) of a record are separated by a comma and each record is a line (i.e. newline separated). For example, the following are the contents of a CSV file:
+	    	\begin{Verbatim}[frame=single, numbers=left]
+	    		id, name, email
+	    		1, John, john.doe@example.com
+	    		2, Jane, janey72@test.org
+	    	\end{Verbatim}
+	    	
+	    	In software that generally deals with tabular data such as a database or a spreadsheet, the contents of the above CSV file is parsed in the form of a table as follows:
+	    	\begin{table}[h!]
+	    		\centering
+	    		\begin{tabular}{|c|c|c|}
+	    			\hline
+	    			\textbf{id} & \textbf{name} & \textbf{email} \\ \hline
+	    			{1} & {John} & {john.doe@example.com} \\ \hline
+	    			{2} & {Jane} & {janey72@test.org} \\ \hline
+	    		\end{tabular}
+	    	\end{table}
+	    	
+	    	The first line is used as the table header and the remaining lines are used as the rows of the table.
+	    	%In CSV files, the data are delimited using commas and usually carry a single header row. Their apparent simplicity is precisely what makes an inconsistent missing-value marker easy to overlook unless the import step is explicitly configured to recognise it.
+	    	
+	    	In Origin
     
-    \subsection{DAT files}
+    	\subsubsection{DAT files}
