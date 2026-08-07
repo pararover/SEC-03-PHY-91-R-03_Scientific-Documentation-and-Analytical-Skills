@@ -53,6 +53,7 @@
 	    			\begin{figure}[h!]
 	    				\centering
 	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-csv-01.png}
+	    				\hfill
 	    				\includegraphics[width=0.44\textwidth]{figures/fig_origin-csv-02.png}
 	    			\end{figure}
 	    			
@@ -73,6 +74,7 @@
 	    			\begin{figure}[h!]
 	    				\centering
 	    				\includegraphics[width=0.4\textwidth]{figures/fig_origin-csv-05.png}
+	    				\hfill
 	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-csv-06.png}
 	    			\end{figure}
 	    		\end{enumerate}
@@ -105,42 +107,45 @@
 	    			\item Create a new project in Origin. Then to import data from a DAT file, go to\\ \verb|Data| $>$ \verb|Import From File| $>$ \verb|Import Wizard|.
 	    			\begin{figure}[h!]
 	    				\centering
-	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-01.png}
+	    				\includegraphics[width=0.6\textwidth]{figures/fig_origin-dat-01.png}
 	    			\end{figure}
 	    			
-	    			\item Insert step.
+	    			\newpage
+	    			\item In the Import Wizard dialog box, we ensure that under \verb|Data Source|, the \verb|File| option is checked and then we click on the button to the right of the filename textbox.
 	    			\begin{figure}[h!]
 	    				\centering
-	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-02.png}
+	    				\includegraphics[width=0.6\textwidth]{figures/fig_origin-dat-02.png}
 	    			\end{figure}
 	    			
-	    			\item Insert step.
+	    			\item After navigating to the folder that contains the DAT file of interest, we select the file (or multiple files). Then we click \verb|Add File(s)| and finally \verb|OK|. We would be taken back to Import Wizard dialog where we can confirm that the full path of the selected DAT file is displayed in the filename textbox.
 	    			\begin{figure}[h!]
 	    				\centering
-	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-03.png}
+	    				\includegraphics[width=0.35\textwidth]{figures/fig_origin-dat-03.png}
+	    				\hfill
+	    				\includegraphics[width=0.6\textwidth]{figures/fig_origin-dat-04.png}
 	    			\end{figure}
 	    			
-	    			\item Insert step.
+	    			\newpage
+	    			\item Clicking \verb|Next| on the Import Wizard dialog takes us to the next window where we set the options for data import.\\
+	    			We uncheck the \verb|Auto determine header lines| checkbox. Then we enable the\\ \verb|By Leading Character| radio button and enter \verb|#| in the textbox alongside. This is because in our DAT files, the header lines are indicated by the character \# at the beginning.\\
+	    			We enter the input \verb|Number of subheader lines = 2| because two lines have special meanings as containing the long names of the columns and their units. We indicate these by the inputs \verb|Long Names = 1| and \verb|Units = 2|.\\
+	    			A preview of the DAT file at the bottom of the dialog page confirms that our options are correct by displaying the header lines in black, the long names in blue, the units in green and the data in grey.
 	    			\begin{figure}[h!]
 	    				\centering
-	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-04.png}
+	    				\includegraphics[width=0.6\textwidth]{figures/fig_origin-dat-05.png}
 	    			\end{figure}
 	    			
-	    			\item Insert step.
-	    			\begin{figure}[h!]
-	    				\centering
-	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-05.png}
-	    			\end{figure}
-	    			
-	    			\item Insert step.
+	    			\item We click on \verb|Next| for the remaining dialog pages and finally click on \verb|Finish|.
 	    			\begin{figure}[h!]
 	    				\centering
 	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-06.png}
 	    			\end{figure}
 	    			
-	    			\item Insert step.
+	    			\item When the Import Wizard closes, we find that the data from the DAT file has been correctly imported into the Origin workbook and it is now ready for analysis.
 	    			\begin{figure}[h!]
 	    				\centering
 	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-07.png}
 	    			\end{figure}
 	    		\end{enumerate}
+
+	\subsection{Interoperability with spreadsheets}
