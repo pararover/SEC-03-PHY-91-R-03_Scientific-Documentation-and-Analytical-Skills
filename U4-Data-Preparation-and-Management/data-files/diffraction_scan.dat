@@ -1,13 +1,10 @@
 # Diffraction Grating Intensity Scan
-# Apparatus: Rotating-stage goniometer + photodiode/ADC detector
 # Wavelength_nm: 632.8
 # Grating_spacing_nm: 3000.0
 # Slit_width_nm: 800.0
-# N_illuminated_slits: 6
-# Integration_time_ms: 50   ADC_bits: 12   ADC_max_counts: 4095
 # Date: 2026-08-01
-# Columns: Angle_deg   Intensity_counts
-#
+Angle         Intensity
+degree        counts
 -45.000       10.5
 -44.850        9.6
 -44.700       16.3

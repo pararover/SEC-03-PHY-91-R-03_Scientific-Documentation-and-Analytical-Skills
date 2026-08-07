@@ -28,9 +28,9 @@
     	\subsubsection{CSV files}
 	    	A comma-separated values (CSV) file is a plain text data format for storing tabular data where the fields (values) of a record are separated by a comma and each record is a line (i.e. newline separated). For example, the following are the contents of a CSV file:
 	    	\begin{Verbatim}[frame=single, numbers=left]
-	    		id, name, email
-	    		1, John, john.doe@example.com
-	    		2, Jane, janey72@test.org
+	id, name, email
+	1, John, john.doe@example.com
+	2, Jane, janey72@test.org
 	    	\end{Verbatim}
 	    	
 	    	In software that generally deals with tabular data such as a database or a spreadsheet, the contents of the above CSV file is parsed in the form of a table as follows:
@@ -47,6 +47,100 @@
 	    	The first line is used as the table header and the remaining lines are used as the rows of the table.
 	    	%In CSV files, the data are delimited using commas and usually carry a single header row. Their apparent simplicity is precisely what makes an inconsistent missing-value marker easy to overlook unless the import step is explicitly configured to recognise it.
 	    	
-	    	In Origin
+	    	\paragraph{Importing data from a CSV file in Origin:}
+	    		\begin{enumerate}[I.]
+	    			\item In the main menu of Origin, go to \verb|File| $>$ \verb|New| $>$ \verb|Project|. This would create a new Origin project with an empty worksheet.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-csv-01.png}
+	    				\includegraphics[width=0.44\textwidth]{figures/fig_origin-csv-02.png}
+	    			\end{figure}
+	    			
+	    			\item To fill in the worksheet with values from the CSV file, we go to \verb|Data| $>$ \verb|Connect to file| $>$ \verb|Text/CSV|.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.6\textwidth]{figures/fig_origin-csv-03.png}
+	    			\end{figure}
+	    			
+	    			\newpage
+	    			\item In the file open dialog, we navigate to the folder containing the CSV file. Selecting the file of interest, we click \verb|Open|.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-csv-04.png}
+	    			\end{figure}
+	    			
+	    			\item Another dialog appears where we can provide the options for importing data from the CSV file. Keeping everything unchanged, we click \verb|OK|. We find that the data from the CSV file has been imported into the worksheet and is ready for further analysis.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.4\textwidth]{figures/fig_origin-csv-05.png}
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-csv-06.png}
+	    			\end{figure}
+	    		\end{enumerate}
     
     	\subsubsection{DAT files}
+    		Computer programs create DAT files to store specific information or data. The information in the file is only relevant to the program that created it, though almost any program can create DAT files. DAT might look like an acronym, but the extension name is actually short for `data.'
+    		
+    		A DAT file may begin with header lines that begin with \#. Any line that begins with a \# is treated like a comment and is subsequently ignored. So we can make use of these header lines to insert specific information in the DAT file. However, it is possible to have DAT files without such header lines.
+    		
+    		The actual data in a DAT file may be entered with each record in its own row and separated by whitespaces, such as space or tab. For example, the following are the contents of a DAT file:
+    		\begin{Verbatim}[frame=single, numbers=left]
+	# Diffraction Grating Intensity Scan
+	# Wavelength_nm: 632.8
+	# Grating_spacing_nm: 3000.0
+	# Slit_width_nm: 800.0
+	# Date: 2026-08-01
+	Angle         Intensity
+	degree        counts
+	-45.000       10.5
+	-44.850        9.6
+	-44.700       16.3
+	-44.550       11.5
+	-44.400       15.2
+    		\end{Verbatim}
+    		
+    		In the above DAT file, lines 1 to 5 are indicated as headers. Lines 6 and 7 are provide the column labels and units respectively. The subsequent lines contain the data, separated by a tab space.
+    		
+    		\paragraph{Importing data from a DAT file in Origin:}
+	    		\begin{enumerate}[I.]
+	    			\item Create a new project in Origin. Then to import data from a DAT file, go to\\ \verb|Data| $>$ \verb|Import From File| $>$ \verb|Import Wizard|.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-01.png}
+	    			\end{figure}
+	    			
+	    			\item Insert step.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-02.png}
+	    			\end{figure}
+	    			
+	    			\item Insert step.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-03.png}
+	    			\end{figure}
+	    			
+	    			\item Insert step.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-04.png}
+	    			\end{figure}
+	    			
+	    			\item Insert step.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-05.png}
+	    			\end{figure}
+	    			
+	    			\item Insert step.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-06.png}
+	    			\end{figure}
+	    			
+	    			\item Insert step.
+	    			\begin{figure}[h!]
+	    				\centering
+	    				\includegraphics[width=0.5\textwidth]{figures/fig_origin-dat-07.png}
+	    			\end{figure}
+	    		\end{enumerate}
