@@ -12,16 +12,25 @@
 			\begin{enumerate}[I.]
 				\item Open the worksheet containing the dataset.
 				
-				\item Highlight the specific cells or rows that are to be masked, and do any of the following:
+				\item Highlight the specific cells or rows that are to be masked and do any of the following:
 				\begin{enumerate}
-					\item Right-click the highlighted selection and click \verb|Mask: Apply|.
-					\item Press Ctrl + M.
-					\item Click the \verb|Mask| icon on the toolbar.
+					\item Right-click the highlighted selection and click \verb|Mask| $>$ \verb|Apply|.
+					\item From the main menu, go to \verb|Column| $>$ \verb|Mask| $>$ \verb|Apply|.
+					\item On the shortcut menu, toggle the \verb|Mask/Unmask| button.
+					\item Click on the \verb|Mask Range| button on the mask toolbar.
 				\end{enumerate}
 				
-				\item The background of the selected cells turns red. Any graph created from this dataset will automatically skip these red masked points.
+				\item The background of the selected cells turns red. The colour of the masked cells can be changed by clicking on the \verb|Change mask color| button on the toolbar.
 				
-				\item To remove the mask, select the red cells, right-click, and choose Mask: Remove (or press Ctrl + Shift + M).
+				\item Any plot created from this dataset will indicate the masked cells in the same colour. The masked data points can also be hidden from the plot by toggling the \verb|Hide/Show masked points| button on the toolbar.
+				
+				\item To remove the mask, highlight the masked cells and do any of the following:
+				\begin{enumerate}
+					\item Right-click the highlighted selection and click \verb|Mask| $>$ \verb|Remove|.
+					\item From the main menu, go to \verb|Column| $>$ \verb|Mask| $>$ \verb|Remove|.
+					\item On the shortcut menu, toggle the \verb|Mask/Unmask| button.
+					\item Click on the \verb|Unmask Range| button on the mask toolbar.
+				\end{enumerate}
 			\end{enumerate}
 	
 	\subsection{Filtering data}
@@ -32,3 +41,27 @@
 		Filtering creates a subset view (a temporary relational selection) of the worksheet. Rows where the condition evaluates to \verb|FALSE| are collapsed or hidden in the user interface and bypassed by downstream analysis routines.
 		
 		Unlike cell-level masking, filtering acts on full rows across all columns simultaneously to preserve tabular record integrity. When the filter rule is toggled off or modified, the full dataset view is restored instantaneously because no data points were modified or unlinked.
+		
+		\subsubsection{Filtering points in Origin}
+			\begin{enumerate}[I.]
+				\item Open the worksheet containing the dataset.
+				
+				\item Click on the column on which the filter is to be applied and do any of the following:
+				\begin{enumerate}
+					\item From the main menu, go to \verb|Column| $>$ \verb|Filter| $>$ \verb|Add or Remove Filter|.
+					\item Click on the \verb|Add/Remove data filter| button on the worksheet data toolbar.
+				\end{enumerate}
+				
+				\item Once a filter has been applied to a column, click on the filter icon on the top-left of the column header and click on the appropriate option from the context menu to modify the filter.
+				
+				\item A filter can be enabled or disabled by selecting the filtered column and clicking on the\\ \verb|Enable/Disable data filter| button on the worksheet data filter.
+				
+				\item To remove a filter, click on the filter icon on the column header and then click \verb|Clear Filter|.
+			\end{enumerate}
+			
+	\subsection*{Exercises}
+		\begin{enumerate}
+			\item Import \verb|muon_events.csv| into a fresh worksheet. Apply a data filter on \verb|Pulse_Height_mV| to display only high-energy events where the pulse height is strictly greater than $50.0$ mV. How many total rows remain visible after applying this filter?
+			
+			\item Import \verb|diffraction_scan.csv|. In optical diffraction measurements, detector saturation occurs at an intensity of $4095.0$ counts. Identify the saturated rows around $0^\circ$ angle where \verb|Intensity_counts| equals $4095.0$ and manually mask them.
+		\end{enumerate}
