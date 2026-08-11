@@ -1,2 +1,34 @@
-\section{Insert title}
-	Insert content.
+\section{Masking and filtering}
+	In physical laboratory experiments, data recorded by instruments often contains unwanted noise, electrical spikes, or out-of-range readings. Filtering and masking are two fundamental techniques used to clean data before plotting or mathematical fitting.
+	
+	\subsection{Masking data}
+		In computational data analysis software like Origin, masking operates at the data cell or point level by attaching an internal metadata boolean flag (a mask status bit) to specific entries within a data structure. The raw numerical array remains entirely intact in memory. Masking does not alter, reindex, or delete row entries from the underlying data vector.
+		
+		When statistical routines (such as mean, variance, or polynomial fitting) or graphic rendering engines query the dataset, they check the mask attribute of each cell. If a cell's mask flag is evaluated as \verb|TRUE| (active mask), the processing engine skips that memory address during iteration or sets its inclusion weight to zero.
+		
+		Masking allows arbitrary cell-level selection regardless of contiguous row order. On the user interface layer, the software highlights masked cells with an overlay color (typically red) and excludes them from graph series without breaking the continuity of the remaining row index mappings.
+		
+		\subsubsection{Masking points in Origin}
+			\begin{enumerate}[I.]
+				\item Open the worksheet containing the dataset.
+				
+				\item Highlight the specific cells or rows that are to be masked, and do any of the following:
+				\begin{enumerate}
+					\item Right-click the highlighted selection and click \verb|Mask: Apply|.
+					\item Press Ctrl + M.
+					\item Click the \verb|Mask| icon on the toolbar.
+				\end{enumerate}
+				
+				\item The background of the selected cells turns red. Any graph created from this dataset will automatically skip these red masked points.
+				
+				\item To remove the mask, select the red cells, right-click, and choose Mask: Remove (or press Ctrl + Shift + M).
+			\end{enumerate}
+	
+	\subsection{Filtering data}
+		Filtering operates as a relational query or dynamic predicate evaluation applied across entire records (rows) of a dataset based on logical conditions defined for one or more variables.
+		
+		The software evaluates a conditional logical expression, such as $f(x_i)=$ \verb|TRUE| for $x_i\geqslant x_{\text{threshold}}$, across a specified column vector $\mathbf{x}$. This produces a global boolean mask vector corresponding to all rows in the worksheet.
+		
+		Filtering creates a subset view (a temporary relational selection) of the worksheet. Rows where the condition evaluates to \verb|FALSE| are collapsed or hidden in the user interface and bypassed by downstream analysis routines.
+		
+		Unlike cell-level masking, filtering acts on full rows across all columns simultaneously to preserve tabular record integrity. When the filter rule is toggled off or modified, the full dataset view is restored instantaneously because no data points were modified or unlinked.

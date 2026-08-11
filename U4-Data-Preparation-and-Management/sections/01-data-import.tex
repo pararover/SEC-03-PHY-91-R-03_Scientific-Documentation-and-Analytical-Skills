@@ -148,4 +148,89 @@
 	    			\end{figure}
 	    		\end{enumerate}
 
-	\subsection{Interoperability with spreadsheets}
+	\subsection{Interoperability using spreadsheets}
+	
+		\subsubsection{XLSX files}
+			An XLSX file is the native workbook format of Microsoft Excel. It is also read and written compatibly by most other spreadsheet platforms, such as LibreOffice Calc and Google Sheets.
+			
+			Structurally, an XLSX file is fundamentally different from the CSV and DAT files because it is not an ASCII file. Rather than being a flat sequence of human-readable characters, an XLSX file is a compressed (ZIP) container holding several internal XML documents that together describe one or more sheets, along with their formatting, formulas, and metadata. Hence, it cannot be usefully opened in a plain text editor the way a CSV or DAT file can.
+			
+			A CSV or DAT file can be parsed by any program capable of reading text, provided the delimiter and header conventions are known. An XLSX file, by contrast, can only be read by software that implements the Office Open XML specification (or a compatible library); Origin does this via a dedicated Excel import module rather than the ASCII import wizard.
+			
+			A single XLSX workbook may contain multiple sheets, each an independent two-dimensional grid of cells. Unlike an ASCII file, a sheet can, by itself, carry more than one header row without any special import configuration. For example, a column-name row followed by a units row.
+			
+		\newpage
+		\subsubsection{Working with XLSX files in Origin}
+		
+			\paragraph{Importing data from an XLSX file}
+				\begin{enumerate}[I.]
+					\item Create a new project in Origin. Then to connect to an XLSX file, go to \verb|Data| $>$ \verb|Connect to File| $>$ \verb|Excel|.
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.6\textwidth]{figures/fig_origin-xls-01.png}
+					\end{figure}
+					
+					\item After navigating to the folder that contains the XLSX file of interest, we select the file and then click \verb|Open|.
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.4\textwidth]{figures/fig_origin-xls-02.png}
+					\end{figure}
+					
+					\item In the \verb|Excel Import Options| dialog, we set \verb|Excel Sheet| as any one of the sheets, usually the first. Also we set \verb|Long Names = 1| and \verb|Units = 2|. Then on clicking \verb|OK|, we find that the data from the selected sheet has been imported into the workbook. However, we also find that, in the \verb|Excel Sheets| sidebar, the other sheets are listed, although they are greyed out, which means that their data has not been imported.
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.36\textwidth]{figures/fig_origin-xls-03.png}
+						\includegraphics[width=0.55\textwidth]{figures/fig_origin-xls-04.png}
+					\end{figure}
+					
+					\newpage
+					\item To import data from another sheet of the XLSX file, we select that sheet from the sidebar, then right-click and select \verb|Connect as New Sheet(s)|. This will import its data into a new worksheet.
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.45\textwidth]{figures/fig_origin-xls-05.png}
+						\includegraphics[width=0.45\textwidth]{figures/fig_origin-xls-06.png}
+					\end{figure}
+					
+					Likewise, we can import data from all the remaining sheets into separate worksheets.
+				\end{enumerate}
+				
+		\paragraph{Appending data from multiple sheets}
+			\begin{enumerate}[I.]
+				\item Suppose that we have similar data in the different sheets of an XLSX file that we have imported. Now to combine the data into a new sheet, we go to \verb|Restructure| $>$ \verb|Append Worksheet| $>$ \verb|Open Dialog|.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.6\textwidth]{figures/fig_origin-xls-append-01.png}
+				\end{figure}
+				
+				\item On the \verb|Append Worksheet| dialog, click on the triangle button to the right of the \verb|Worksheets| option and then\\ click \verb|Select Worksheets|.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.4\textwidth]{figures/fig_origin-xls-append-02.png}
+				\end{figure}
+				
+				\item The \verb|Sheet Browser| dialog would then open up. Pressing and holding down the Ctrl button, click and select all the worksheets, and then click \verb|Add|.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.6\textwidth]{figures/fig_origin-xls-append-03.png}
+				\end{figure}
+				
+				\item The selected worksheets would then appear in the list below. We then click \verb|OK|.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.6\textwidth]{figures/fig_origin-xls-append-04.png}
+				\end{figure}
+				
+				\newpage
+				\item After the above step, we would be back in the \verb|Append Worksheet| dialog. We set \verb|Append by = Row|.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.4\textwidth]{figures/fig_origin-xls-append-05.png}
+				\end{figure}
+				
+				\item In \verb|Output Worksheet| we type the name of the new worksheet which is to contain the combined data. Then we click \verb|OK| to find that a new worksheet has been created, which contains the combined data from all the worksheets.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.4\textwidth]{figures/fig_origin-xls-append-06.png}
+					\includegraphics[width=0.5\textwidth]{figures/fig_origin-xls-append-07.png}
+				\end{figure}
+			\end{enumerate}
