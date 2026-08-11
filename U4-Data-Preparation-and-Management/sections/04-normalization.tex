@@ -1,2 +1,12 @@
-\section{Insert title}
-	Insert content.
+\section{Normalization of data}
+	Normalization is the process of scaling numeric values measured in arbitrary units into a standardized relative range, typically between $0$ and $1$ (or $0\%$ and $100\%$).
+	
+	In optical spectroscopy, X-ray diffraction (XRD), or gamma-ray spectra, raw peak heights depend on lamp power, detector gain, or exposure time. To compare the shapes or relative peak ratios of two different experimental scans, we divide all data values by the maximum peak value:
+	\begin{align*}
+		Y_\text{normalized}=\dfrac{Y}{Y_\text{max}}
+	\end{align*}
+	
+	When background baseline offset is present, we adjust the scale so the minimum value becomes $0$ and the maximum becomes $1$. This is known as \emph{min-max scaling} as follows:
+	\begin{align*}
+		Y_\text{normalized}=\dfrac{Y-Y_\text{min}}{Y_\text{max}-Y_\text{min}}
+	\end{align*}

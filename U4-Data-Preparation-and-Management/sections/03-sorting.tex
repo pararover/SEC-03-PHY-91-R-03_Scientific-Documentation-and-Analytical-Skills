@@ -1,2 +1,22 @@
-\section{Insert title}
-	Insert content.
+\section{Sorting of data}
+	Sorting means arranging the rows of a dataset in a specific order—either ascending (\emph{smallest to largest} or \emph{A to Z}) or descending (\emph{largest to smallest} or \emph{Z to A}) based on the values in a selected column.
+	
+	Instruments do not always log data in strict chronological or numerical order. Sorting helps organize observations by an independent variable (such as magnetic field strength, angle, or time) so that line plots connect data points continuously rather than crisscrossing back and forth across the graph.
+	
+	\subsection{Sorting worksheet rows in Origin}
+		\begin{enumerate}[I.]
+			\item Open the worksheet containing the datasheet.
+			
+			\item Click on the column using which the rows of the worksheet need to be sorted and do any of the following:
+			\begin{enumerate}
+				\item From the main menu, go to \verb|Worksheet| $>$ \verb|Sort Worksheet| $>$ \verb|Ascending| or \verb|Descending| or any other customised sorting criteria with the \verb|Custom| option.
+				\item Right-click on the column header and then go to \verb|Worksheet| $>$ \verb|Sort Worksheet| $>$ \verb|Ascending| or \verb|Descending| or any other customised sorting criteria with the \verb|Custom| option.
+			\end{enumerate}
+		\end{enumerate}
+		
+	\subsection*{Exercises}
+		\begin{enumerate}
+			\item Import \verb|hall_effect_sweep.csv|. Sort the entire worksheet in descending order based on the \verb|Field_mT| data. What is the maximum field strength value?
+			
+			\item Import \verb|muon_events.csv|. Sort the worksheet in ascending order by the data in the\\ \verb|Pulse_Height_mV| column. What timestamp corresponds to the lowest pulse height?
+		\end{enumerate}
