@@ -10,3 +10,43 @@
 	\begin{align*}
 		Y_\text{normalized}=\dfrac{Y-Y_\text{min}}{Y_\text{max}-Y_\text{min}}
 	\end{align*}
+	
+	\subsection{Normalizing data in Origin}
+	
+		\subsubsection{First method (in-built method)}
+			\begin{enumerate}[I.]
+				\item Open the worksheet containing the dataset.
+				
+				\item Click to highlight the entire column that contains data to be normalized, and do any of the following:
+				\begin{enumerate}
+					\item From the main menu, go to \verb|Analysis| $>$ \verb|Mathematics| $>$ \verb|Normalize Columns| $>$ \verb|Open Dialog|.
+					\item Right-click on the column header and, on the context menu, click on \verb|Normalize|.
+				\end{enumerate}
+				
+				\item Select the appropriate option against \verb|Normalize Methods|.\\ The default is \verb|Normalize to [0, 1]|. Then click \verb|OK|.
+				
+				\item The normalized data is calculated and placed in a new column. The long name of the column can then be edited as per requirement.
+			\end{enumerate}
+			
+		\subsubsection{Second method (formula method)}
+			\begin{enumerate}[I.]
+				\item Open the worksheet containing the dataset.
+				
+				\item Right-click on the empty area to the right of the right-most column, and then click \verb|Add New Column|.
+				
+				\item A new column with created, say it is named \verb|C|. It can be given an appropriate long name.
+				
+				\item Click to highlight the new column \verb|C|. Then right-click and select \verb|Set Column Values|.
+				
+				\item The \verb|Set Values| dialog opens up. Suppose we want to fill up column \verb|C| with normalized values from column \verb|B|, then in the formula box, we type the following formula and click \verb|OK|:
+				\begin{verbatim}
+		(Col(B) - Min(Col(B))) / (Max(Col(B)) - Min(Col(B)))
+				\end{verbatim}
+			\end{enumerate}
+			
+	\subsection*{Exercises}
+		\begin{enumerate}
+			\item Using \verb|diffraction_scan.csv|, perform normalization on Column B (i.e. \verb|Intensity_counts|) using the Origin's in-built method.
+			
+			\item Import \verb|muon_events.csv|. Create a new column titled \verb|Normalized_Pulse| and scale \verb|Pulse_Height_mV| using the formula method.
+		\end{enumerate}
